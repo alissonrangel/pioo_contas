@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load widget_tweaks %}
+<!-- -->
+{% block titulo %} Login | {{ block.super }} {% endblock titulo %}
+<!-- -->
+{% block corpo %}
+
+<h1>Informe usuário e senha</h1>
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_username">Nome de Usuário</label>
+        <input type="text" class="form-control" name="username" id="id_username" autofocus>
+    </div>
+    <div class="form-group">
+        <label for="id_password">Nome de Usuário</label>
+        <input type="password" class="form-control" name="password" id="id_password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Entrar</button>
+    <a href="{% url 'gestor:add_user' %}" class="btn btn-info">Criar Usuário</a>
+</form>
+<!-- -->
+{% endblock corpo %}

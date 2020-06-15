@@ -1,0 +1,16 @@
+@startuml
+class Pessoa{
+CharField nome
+DateField nascimento
+CharField cpf
+}
+
+class Conta{
+Pessoa pessoa
+CharField tipo_conta
+DateField vencimento
+DecimalField valor
+}
+
+Conta *-- Pessoa
+@enduml
